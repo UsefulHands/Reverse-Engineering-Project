@@ -1,0 +1,30 @@
+{
+  "name": "frida-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "build-map": "node generate-mapping.js",
+    "compile": "frida-compile index.ts -o agent.js",
+    "build": "npm run build-map && npm run compile",
+    "start": "npm run build && node main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "frida": "^17.9.6",
+    "frida-compile": "^19.0.5",
+    "frida-tools": "^1.0.2"
+  },
+  "pkg": {
+    "assets": [
+      "agent.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/frida-gum": "^19.1.0",
+    "frida-il2cpp-bridge": "^0.11.0"
+  }
+}
